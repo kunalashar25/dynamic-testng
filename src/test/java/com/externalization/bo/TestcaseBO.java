@@ -1,4 +1,4 @@
-package com.dataEx.bo;
+package com.externalization.bo;
 
 public class TestcaseBO {
 

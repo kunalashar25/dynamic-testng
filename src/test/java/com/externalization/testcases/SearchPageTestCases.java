@@ -1,4 +1,4 @@
-package com.dataEx.testcases;
+package com.externalization.testcases;
 
 import org.testng.annotations.Test;
 

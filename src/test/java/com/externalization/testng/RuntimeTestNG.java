@@ -1,6 +1,6 @@
-package com.dataEx.testng;
+package com.externalization.testng;
 
-import com.dataEx.bo.TestcaseBO;
+import com.externalization.bo.TestcaseBO;
 import org.apache.commons.collections4.CollectionUtils;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 public class RuntimeTestNG {
 
-    private static String testcasePackagePath = "com.dataEx.testcases";
+    private static String testcasePackagePath = "com.externalization.testcases";
 
     public TestNG create(List<TestcaseBO> testcaseList) {
 

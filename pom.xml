@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>TestdataExternalization</artifactId>
+    <artifactId>TestcaseExternalization</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -47,6 +47,11 @@
 
     </dependencies>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -59,7 +64,7 @@
             </plugin>
 
             <!--To Execute Test cases from XML file-->
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12.2</version>
@@ -67,13 +72,13 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/suitesXml/smokeSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <!--<skipTests>true</skipTests>-->
+                    &lt;!&ndash;<skipTests>true</skipTests>&ndash;&gt;
                     <cleanupDaemonThreads>false</cleanupDaemonThreads>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
             <!--To Execute Test cases from Main Method-->
-            <!--  <plugin>
+              <plugin>
                   <groupId>org.codehaus.mojo</groupId>
                   <artifactId>exec-maven-plugin</artifactId>
                   <version>1.6.0</version>
@@ -87,10 +92,10 @@
                   </executions>
                   <configuration>
                       <classpathScope>test</classpathScope>
-                      <mainClass>com.dataEx.StartUp</mainClass>
+                      <mainClass>com.externalization.StartUp</mainClass>
                       <cleanupDaemonThreads>false</cleanupDaemonThreads>
                   </configuration>
-              </plugin>-->
+              </plugin>
         </plugins>
     </build>
 </project>

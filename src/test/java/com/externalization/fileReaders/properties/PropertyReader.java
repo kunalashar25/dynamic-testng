@@ -1,4 +1,4 @@
-package com.dataEx.fileReaders.properties;
+package com.externalization.fileReaders.properties;
 
 import org.testng.annotations.Test;
 

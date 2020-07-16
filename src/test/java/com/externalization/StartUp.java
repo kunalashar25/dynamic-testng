@@ -1,9 +1,9 @@
-package com.dataEx;
+package com.externalization;
 
-import com.dataEx.bo.TestcaseBO;
-import com.dataEx.fileReaders.excel.TestCaseFileReader;
-import com.dataEx.fileReaders.properties.PropertyReader;
-import com.dataEx.testng.RuntimeTestNG;
+import com.externalization.bo.TestcaseBO;
+import com.externalization.fileReaders.excel.TestCaseFileReader;
+import com.externalization.fileReaders.properties.PropertyReader;
+import com.externalization.testng.RuntimeTestNG;
 
 import java.util.List;
 

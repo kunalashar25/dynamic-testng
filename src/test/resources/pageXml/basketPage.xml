@@ -4,7 +4,7 @@
 <suite name="BasketPage">
     <test name="BasketTests">
         <classes>
-            <class name="com.dataEx.testcases.BasketPageTestCases"/>
+            <class name="com.externalization.testcases.BasketPageTestCases"/>
         </classes>
     </test>
 </suite>

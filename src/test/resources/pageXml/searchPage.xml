@@ -4,7 +4,7 @@
 <suite name="SearchPage">
     <test name="SearchTests">
         <classes>
-            <class name="com.dataEx.testcases.SearchPageTestCases"/>
+            <class name="com.externalization.testcases.SearchPageTestCases"/>
         </classes>
     </test>
 </suite>

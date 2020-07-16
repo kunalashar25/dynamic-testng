@@ -1,7 +1,7 @@
-package com.dataEx.fileReaders.excel;
+package com.externalization.fileReaders.excel;
 
-import com.dataEx.bo.TestcaseBO;
-import com.dataEx.fileReaders.properties.PropertyReader;
+import com.externalization.bo.TestcaseBO;
+import com.externalization.fileReaders.properties.PropertyReader;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -26,6 +26,7 @@ public class TestCaseFileReader {
 
         // get suite name
         String suiteName = PropertyReader.getProperty("suiteToRun").toLowerCase();
+        System.out.println("\nInitiating Execution for " + suiteName.toUpperCase() + " Suite\n");
 
         // creating workbook instance
         XSSFWorkbook workbook = null;
@@ -62,7 +63,7 @@ public class TestCaseFileReader {
                 try {
                     CellType cellType = sheet.getRow(i + 1).getCell(j).getCellType();
 
-                    switch(cellType){
+                    switch (cellType) {
                         case STRING:
                             value = sheet.getRow(i + 1).getCell(j).getStringCellValue();
                             break;
@@ -70,7 +71,7 @@ public class TestCaseFileReader {
                             value = String.valueOf(sheet.getRow(i + 1).getCell(j).getNumericCellValue());
                             break;
                         default:
-                            value="";
+                            value = "";
                             break;
                     }
                 } catch (NullPointerException npe) {
@@ -82,7 +83,7 @@ public class TestCaseFileReader {
             }
 
             // check if testcase execution flag for given suite
-            if(testcaseMap.get(suiteName).equalsIgnoreCase("Y")){
+            if (testcaseMap.get(suiteName).equalsIgnoreCase("Y")) {
 
                 // set BO values
                 TestcaseBO testcaseBO = new TestcaseBO();

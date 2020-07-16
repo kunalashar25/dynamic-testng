@@ -4,7 +4,7 @@
 <suite name="LoginPage">
     <test name="LoginTests">
         <classes>
-            <class name="com.dataEx.testcases.LoginPageTestCases">
+            <class name="com.externalization.testcases.LoginPageTestCases">
 <!--                <methods>
                     <include name="login"/>
                 </methods>-->
