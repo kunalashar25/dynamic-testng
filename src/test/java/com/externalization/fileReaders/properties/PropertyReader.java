@@ -31,9 +31,9 @@ public class PropertyReader {
             properties.load(reader);
 
         } catch (FileNotFoundException fnfe) {
-            System.out.println(fnfe);
+            fnfe.printStackTrace();
         } catch (IOException ioe) {
-            System.out.println(ioe);
+            ioe.printStackTrace();
         }
     }
 

@@ -96,7 +96,7 @@ public class RuntimeTestNG {
             }
 
             // if method list is not empty then do following
-            if (!includeMethods.isEmpty()) {
+            if (CollectionUtils.isNotEmpty(includeMethods)) {
 
                 // adding all methods to the testNg configuration
                 cls.setIncludedMethods(includeMethods);

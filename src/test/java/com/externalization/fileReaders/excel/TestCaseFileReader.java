@@ -23,6 +23,7 @@ public class TestCaseFileReader {
 
         // to store list of testcases to be executed
         List<TestcaseBO> testcaseList = new ArrayList<>();
+        String sheetName = "FourthDraft";
 
         // get suite name
         String suiteName = PropertyReader.getProperty("suiteToRun").toLowerCase();
@@ -39,7 +40,7 @@ public class TestCaseFileReader {
         }
 
         // get testcase sheet
-        XSSFSheet sheet = workbook.getSheet("FourthDraft");
+        XSSFSheet sheet = workbook.getSheet(sheetName);
 
         // find total number of rows
         int totalRows = sheet.getPhysicalNumberOfRows();
@@ -105,6 +106,9 @@ public class TestCaseFileReader {
         return testcaseList;
     }
 
+    /**
+     * Unit test to verify excel reader
+     */
     @Test
     public void unitTest() {
         new PropertyReader();
