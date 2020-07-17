@@ -115,8 +115,17 @@ public class RuntimeTestNG {
         return testNG;
     }
 
+    /**
+     * Contains filtering logic to select testcase for current execution
+     *
+     * @param testcaseList list of testcases
+     * @param method       current class method
+     * @return method to include
+     */
     private XmlInclude filterTestcaseToRun(List<TestcaseBO> testcaseList, Method method) {
         String methodName = method.getName();
+
+        // read page name from config
         String pageName = PropertyReader.getProperty("pageToRun");
 
         // check testcase List contains data
