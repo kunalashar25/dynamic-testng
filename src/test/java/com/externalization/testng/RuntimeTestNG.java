@@ -1,6 +1,7 @@
 package com.externalization.testng;
 
 import com.externalization.bo.TestcaseBO;
+import com.externalization.fileReaders.properties.PropertyReader;
 import org.apache.commons.collections4.CollectionUtils;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -77,22 +78,10 @@ public class RuntimeTestNG {
 
             // iterating on all methods and adding to the class
             for (Method method : allMethods) {
-
-                String methodName = method.getName();
-
-                // Testcase filtering logic to be added here
-
-                // check testcase List contains data
-                if (CollectionUtils.isNotEmpty(testcaseList)) {
-                    if (!testcaseList.stream().filter(t -> t.getTestcaseName().equals(methodName)).
-                            collect(Collectors.toList()).isEmpty()) {
-
-                        // creating method list to add to each class
-                        includeMethods.add(new XmlInclude(methodName));
-                    }
-                } else
-                    throw new IllegalStateException("No Testcase for Execution!");
-
+                XmlInclude include = filterTestcaseToRun(testcaseList, method);
+                if (include != null) {
+                    includeMethods.add(include);
+                }
             }
 
             // if method list is not empty then do following
@@ -126,6 +115,26 @@ public class RuntimeTestNG {
         return testNG;
     }
 
+    private XmlInclude filterTestcaseToRun(List<TestcaseBO> testcaseList, Method method) {
+        String methodName = method.getName();
+        String pageName = PropertyReader.getProperty("pageToRun");
+
+        // check testcase List contains data
+        if (CollectionUtils.isNotEmpty(testcaseList)) {
+            if (!testcaseList.stream().filter(t -> t.getTestcaseName().equals(methodName))
+                    .filter(t -> t.getPageName().equalsIgnoreCase(pageName) ||
+                            pageName.equalsIgnoreCase("all")).
+                            collect(Collectors.toList()).isEmpty()) {
+
+                // creating method list to add to each class
+                return new XmlInclude(methodName);
+            }
+        } else
+            throw new IllegalStateException("No Testcase for Execution!");
+
+        return null;
+    }
+
     /**
      * It'll scan all the classes placed at below path
      *
@@ -148,6 +157,7 @@ public class RuntimeTestNG {
      */
     @Test
     private void unitTest() {
+        new PropertyReader();
         RuntimeTestNG testNG = new RuntimeTestNG();
         testNG.create(null);
     }
