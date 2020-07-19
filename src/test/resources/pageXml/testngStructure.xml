@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Structure">
+    <test name="SearchTests">
+        <classes>
+            <class name="com.externalization.testcases.SearchPageTestCases">
+                <methods>
+                    <include name="searchItemByName"/>
+                    <exclude name="addItemToBasket"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BasketTests">
+        <classes>
+            <class name="com.externalization.testcases.BasketPageTestCases">
+                <methods>
+                    <include name="updateItemQuantity"/>
+                    <exclude name="updateItemPrice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

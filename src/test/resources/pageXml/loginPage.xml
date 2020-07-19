@@ -5,7 +5,7 @@
     <test name="LoginTests">
         <classes>
             <class name="com.externalization.testcases.LoginPageTestCases">
-<!--                <methods>
+                <!--<methods>
                     <include name="login"/>
                 </methods>-->
             </class>
