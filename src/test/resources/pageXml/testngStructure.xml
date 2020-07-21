@@ -2,8 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Structure">
-    <test name="SearchTests">
+    <test name="LoginAndSearchTests">
         <classes>
+            <class name="com.externalization.testcases.LoginPageTestCases">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
             <class name="com.externalization.testcases.SearchPageTestCases">
                 <methods>
                     <include name="searchItemByName"/>

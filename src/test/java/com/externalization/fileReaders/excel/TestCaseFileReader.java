@@ -23,7 +23,7 @@ public class TestCaseFileReader {
 
         // to store list of testcases to be executed
         List<TestcaseBO> testcaseList = new ArrayList<>();
-        String sheetName = "FourthDraft";
+        String sheetName = "ThirdDraft";
 
         // get suite name
         String suiteName = PropertyReader.getProperty("suiteToRun").toLowerCase();
