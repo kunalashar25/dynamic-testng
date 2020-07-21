@@ -4,7 +4,7 @@
 <suite name="RegressionSuite">
     <suite-files>
         <suite-file path="./../pageXml/loginPage.xml"></suite-file>
-        <suite-file path="./../pageXml/searchPage.xml"></suite-file>
+        <suite-file path="./../pageXml/searchPage.xml"/>
         <suite-file path="./../pageXml/basketPage.xml"></suite-file>
     </suite-files>
 </suite>

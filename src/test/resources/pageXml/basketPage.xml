@@ -5,6 +5,9 @@
     <test name="BasketTests">
         <classes>
             <class name="com.externalization.testcases.BasketPageTestCases">
+                <methods>
+                    <exclude name="updateItemQuantity"></exclude>
+                </methods>
             </class>
         </classes>
     </test>

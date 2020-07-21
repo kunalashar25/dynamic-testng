@@ -103,6 +103,8 @@ public class TestCaseFileReader {
             ioe.printStackTrace();
         }
 
+        System.out.println("Testcases to execute:: "+testcaseList+"\n");
+
         return testcaseList;
     }
 
