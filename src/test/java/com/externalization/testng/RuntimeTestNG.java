@@ -36,7 +36,7 @@ public class RuntimeTestNG {
         // creating new Suite
         XmlSuite suite = new XmlSuite();
         suite.setName("Runtime TestNG");
-        suite.setThreadCount(5);
+        suite.setThreadCount(1);
         suite.setParallel(XmlSuite.ParallelMode.METHODS);
 
         // adding custom listeners
@@ -84,8 +84,8 @@ public class RuntimeTestNG {
 
                 // check testcase List contains data
                 if (CollectionUtils.isNotEmpty(testcaseList)) {
-                    if (!testcaseList.stream().filter(t -> t.getTestcaseName().equals(methodName)).
-                            collect(Collectors.toList()).isEmpty()) {
+                    if (!testcaseList.stream().filter(t -> t.getTestcaseName().equals(methodName))
+                            .collect(Collectors.toList()).isEmpty()) {
 
                         // creating method list to add to each class
                         includeMethods.add(new XmlInclude(methodName));
