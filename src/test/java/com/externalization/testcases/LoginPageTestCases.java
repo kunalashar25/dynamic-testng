@@ -10,12 +10,12 @@ public class LoginPageTestCases {
     }
 
     @Test
-    public void forgotPassword() {
-        System.out.println("forgot password");
+    public void forgotUsername() {
+        System.out.println("forgot username");
     }
 
     @Test
-    public void forgotUsername() {
-        System.out.println("forgot username");
+    public void forgotPassword() {
+        System.out.println("forgot password");
     }
 }

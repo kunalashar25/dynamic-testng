@@ -12,7 +12,7 @@ public class StartUp {
     public static void main(String[] args) {
 
         // read properties file
-        PropertyReader propertyReader = new PropertyReader();
+        new PropertyReader();
 
         // read testcase file
         TestCaseFileReader testCaseFileReader = new TestCaseFileReader();
